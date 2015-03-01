@@ -18,6 +18,11 @@
 (when (fboundp 'scroll-bar-mode)
   (scroll-bar-mode -1))
 
+;; Set initial window size
+(custom-set-variables
+   '(initial-frame-alist '((fullscreen . fullheight)
+                           (width . 100))))
+
 (require 'package)
 
 (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
