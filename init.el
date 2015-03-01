@@ -8,7 +8,9 @@
 (setq ring-bell-function 'ignore)
 
 ;; Hide menu-bar
-;(menu-bar-mode -1)
+(when (and (fboundp 'menu-bar-mode)
+	   (not window-system))
+  (menu-bar-mode -1))
 
 ;; Hide tool-bar
 (when (fboundp 'tool-bar-mode)
