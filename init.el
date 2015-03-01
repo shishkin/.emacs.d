@@ -19,9 +19,10 @@
   (scroll-bar-mode -1))
 
 ;; Set initial window size
-(custom-set-variables
-   '(initial-frame-alist '((fullscreen . fullheight)
-                           (width . 100))))
+(setq initial-frame-alist '((top . 0)
+                            (left . 0)
+                            (fullscreen . fullheight)
+                            (width . 100)))
 
 (require 'package)
 
