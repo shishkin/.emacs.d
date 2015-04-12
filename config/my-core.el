@@ -1,5 +1,7 @@
 ;; Don't create ~ lockfiles
+(setq make-backup-files nil)
 (setq create-lockfiles nil)
+(setq auto-save-default nil)
 
 ;; Go straight to scratch buffer on startup
 (setq inhibit-startup-message t)
