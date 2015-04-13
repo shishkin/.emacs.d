@@ -1,44 +1,37 @@
-;; Don't create ~ lockfiles
-(setq make-backup-files nil)
-(setq create-lockfiles nil)
-(setq auto-save-default nil)
+;; <C-h v> on a variable or <C-h f> on a function for help
 
-;; Go straight to scratch buffer on startup
-(setq inhibit-startup-message t)
+(setq
 
-;; no bell
-(setq ring-bell-function 'ignore)
+ ;; disable all the temp files
+ make-backup-files nil
+ create-lockfiles nil
+ auto-save-default nil
 
-;; Hide menu-bar
-(when (and (fboundp 'menu-bar-mode)
-	   (not window-system))
-  (menu-bar-mode -1))
+ inhibit-startup-message t
 
-;; Hide tool-bar
-(when (fboundp 'tool-bar-mode)
-  (tool-bar-mode -1))
+ ;; initial window size
+ initial-frame-alist '((top . 0)
+		       (left . 0)
+		       (fullscreen . fullheight)
+		       (width . 100))
 
-;; Don't show native OS scroll bars for buffers because they're redundant
-(when (fboundp 'scroll-bar-mode)
-  (scroll-bar-mode -1))
+ ring-bell-function 'ignore)
 
-;; Set initial window size
-(setq initial-frame-alist '((top . 0)
-                            (left . 0)
-                            (fullscreen . fullheight)
-                            (width . 100)))
+(menu-bar-mode 0)
+(tool-bar-mode 0)
+(scroll-bar-mode 0)
 
-;; Show line numbers
-(global-linum-mode)
+(global-linum-mode t)
+(global-hl-line-mode t)
 
-;; Highlights matching parenthesis
-(show-paren-mode 1)
+;; matching parens
+(show-paren-mode t)
 
-;; yay rainbows!
-;(global-rainbow-delimiters-mode t)
+;; syntax highlighting
+(global-font-lock-mode t)
 
-;; Highlight current line
-(global-hl-line-mode 1)
+;; proper line wrapping
+(global-visual-line-mode t)
 
 (provide 'my-core)
 
