@@ -5,6 +5,7 @@
 (require 'my-theme)
 (require 'my-dired)
 (require 'my-ensime)
+(require 'my-elixir)
 (require 'my-key-bindings)
 (require 'my-evil)
 
