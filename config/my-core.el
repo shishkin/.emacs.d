@@ -9,6 +9,8 @@
 
  inhibit-startup-message t
 
+ vc-follow-symlinks nil
+
  ;; initial window size
  initial-frame-alist '((top . 0)
 		       (left . 0)
